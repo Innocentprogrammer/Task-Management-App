@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { DragDropContext } from "react-beautiful-dnd";
+import { DragDropContext } from "react-beautiful-dnd";
 import { Typography, Box, Paper, useMediaQuery, useTheme } from "@mui/material";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
@@ -124,16 +124,16 @@ const TaskManager = () => {
         <TaskFilters filters={filters} onFilterChange={handleFilterChange} />
       </Box>
 
-      {/* <DragDropContext onDragEnd={handleDragEnd}> */}
-      <div onDragEnd={handleDragEnd}>
+      <DragDropContext onDragEnd={handleDragEnd}>
+      {/* <div onDragEnd={handleDragEnd}> */}
         <TaskList
           tasks={filteredTasks}
           onUpdateTask={handleUpdateTask}
           onDeleteTask={handleDeleteTask}
           isMobile={isMobile}
         />
-      </div>
-      {/* </DragDropContext> */}
+      {/* </div> */}
+      </DragDropContext>
     </Paper>
   );
 };

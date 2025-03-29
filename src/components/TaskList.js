@@ -1,12 +1,12 @@
-import React from 'react';
-// import { Droppable, Draggable } from 'react-beautiful-dnd';
-import { Box, Typography } from '@mui/material';
-import TaskItem from './TaskItem';
+import React from "react";
+import { Droppable, Draggable } from "react-beautiful-dnd";
+import { Box, Typography } from "@mui/material";
+import TaskItem from "./TaskItem";
 
 const TaskList = ({ tasks, onUpdateTask, onDeleteTask, isMobile }) => {
   if (tasks.length === 0) {
     return (
-      <Box sx={{ textAlign: 'center', py: 4 }}>
+      <Box sx={{ textAlign: "center", py: 4 }}>
         <Typography variant="body1" color="textSecondary">
           No tasks found. Add a new task to get started!
         </Typography>
@@ -15,16 +15,13 @@ const TaskList = ({ tasks, onUpdateTask, onDeleteTask, isMobile }) => {
   }
 
   return (
-    // <Droppable droppableId="tasks">
-    <div>
+    <Droppable droppableId="tasks">
+      {/* <div droppableId="tasks"> */}
       {(provided) => (
-        <Box
-          ref={provided.innerRef}
-          {...provided.droppableProps}
-        >
+        <Box ref={provided.innerRef} {...provided.droppableProps}>
           {tasks.map((task, index) => (
-            // <Draggable key={task.id} draggableId={task.id} index={index}>
-            <div>
+            <Draggable key={task.id} draggableId={task.id} index={index}>
+              {/* <div key={task.id} draggableId={task.id} index={index}> */}
               {(provided) => (
                 <Box
                   ref={provided.innerRef}
@@ -40,14 +37,14 @@ const TaskList = ({ tasks, onUpdateTask, onDeleteTask, isMobile }) => {
                   />
                 </Box>
               )}
-              </div>
-            // </Draggable>
+              {/* </div> */}
+            </Draggable>
           ))}
           {provided.placeholder}
         </Box>
       )}
-      </div>
-    // </Droppable>
+      {/* </div> */}
+    </Droppable>
   );
 };
 
