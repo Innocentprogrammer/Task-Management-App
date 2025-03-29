@@ -1,5 +1,5 @@
 import React from 'react';
-import { Droppable, Draggable } from 'react-beautiful-dnd';
+// import { Droppable, Draggable } from 'react-beautiful-dnd';
 import { Box, Typography } from '@mui/material';
 import TaskItem from './TaskItem';
 
@@ -15,14 +15,16 @@ const TaskList = ({ tasks, onUpdateTask, onDeleteTask, isMobile }) => {
   }
 
   return (
-    <Droppable droppableId="tasks">
+    // <Droppable droppableId="tasks">
+    <div>
       {(provided) => (
         <Box
           ref={provided.innerRef}
           {...provided.droppableProps}
         >
           {tasks.map((task, index) => (
-            <Draggable key={task.id} draggableId={task.id} index={index}>
+            // <Draggable key={task.id} draggableId={task.id} index={index}>
+            <div>
               {(provided) => (
                 <Box
                   ref={provided.innerRef}
@@ -38,12 +40,14 @@ const TaskList = ({ tasks, onUpdateTask, onDeleteTask, isMobile }) => {
                   />
                 </Box>
               )}
-            </Draggable>
+              </div>
+            // </Draggable>
           ))}
           {provided.placeholder}
         </Box>
       )}
-    </Droppable>
+      </div>
+    // </Droppable>
   );
 };
 
