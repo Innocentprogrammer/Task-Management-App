@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { DragDropContext } from "react-beautiful-dnd";
+import { DragDropContext } from "@hello-pangea/dnd";
 import { Typography, Box, Paper, useMediaQuery, useTheme } from "@mui/material";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
