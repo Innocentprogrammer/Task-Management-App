@@ -16,12 +16,10 @@ const TaskList = ({ tasks, onUpdateTask, onDeleteTask, isMobile }) => {
 
   return (
     <Droppable droppableId="tasks">
-      {/* <div droppableId="tasks"> */}
       {(provided) => (
         <Box ref={provided.innerRef} {...provided.droppableProps}>
           {tasks.map((task, index) => (
             <Draggable key={task.id} draggableId={task.id} index={index}>
-              {/* <div key={task.id} draggableId={task.id} index={index}> */}
               {(provided) => (
                 <Box
                   ref={provided.innerRef}
@@ -37,13 +35,11 @@ const TaskList = ({ tasks, onUpdateTask, onDeleteTask, isMobile }) => {
                   />
                 </Box>
               )}
-              {/* </div> */}
             </Draggable>
           ))}
           {provided.placeholder}
         </Box>
       )}
-      {/* </div> */}
     </Droppable>
   );
 };

@@ -125,14 +125,12 @@ const TaskManager = () => {
       </Box>
 
       <DragDropContext onDragEnd={handleDragEnd}>
-      {/* <div onDragEnd={handleDragEnd}> */}
         <TaskList
           tasks={filteredTasks}
           onUpdateTask={handleUpdateTask}
           onDeleteTask={handleDeleteTask}
           isMobile={isMobile}
         />
-      {/* </div> */}
       </DragDropContext>
     </Paper>
   );
